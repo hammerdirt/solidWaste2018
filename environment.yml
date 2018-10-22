@@ -41,6 +41,7 @@ dependencies:
   - openssl=1.0.2p=h14c3975_0
   - pandas=0.23.4=py37h04863e7_0
   - parso=0.3.1=py37_0
+  - patsy=0.5.0=py37_0
   - pcre=8.42=h439df22_0
   - pexpect=4.6.0=py37_0
   - pickleshare=0.7.5=py37_0
@@ -61,6 +62,7 @@ dependencies:
   - sip=4.19.8=py37hf484d3e_0
   - six=1.11.0=py37_1
   - sqlite=3.25.2=h7b6447c_0
+  - statsmodels=0.9.0=py37h035aef0_0
   - tk=8.6.8=hbc83047_0
   - tornado=5.1.1=py37h7b6447c_0
   - traitlets=4.3.2=py37_0
