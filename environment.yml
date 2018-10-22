@@ -57,6 +57,7 @@ dependencies:
   - qt=5.9.6=h8703b6f_2
   - readline=7.0=h7b6447c_5
   - scipy=1.1.0=py37hfa4b5c9_1
+  - seaborn=0.9.0=py37_0
   - setuptools=40.4.3=py37_0
   - simplegeneric=0.8.1=py37_2
   - sip=4.19.8=py37hf484d3e_0
