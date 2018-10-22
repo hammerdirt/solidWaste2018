@@ -1,6 +1,7 @@
 ## SolidWaste2018 -- Testing the probability of garbage
 ### Semester project EPFL Solid Waste Engineering
 
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/hammerdirt/solidWaste2018/master)
 
 
 Masters students in Environmental Engineering from the [École Polytechnique Féderale de Lausanne](https://enac.epfl.ch/environmental-engineering) test the hypothesis that litter densities on Lac Léman are predicatable. The current method is based on the Probability Density Function derived from the logarithm of the pieces/meter of trash (pcs/m) from over 100 samples.
