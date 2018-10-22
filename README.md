@@ -1,6 +1,8 @@
 ## SolidWaste2018 -- Testing the probability of garbage
 ### Semester project EPFL Solid Waste Engineering
 
+#### If you don't have an environment set up, or if you are unfamiliar with python you can see all the notebooks and use them interactiveley by clicking the badge below. The introduction note books will be coming up shortly! 
+
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/hammerdirt/solidWaste2018/master)
 
 
