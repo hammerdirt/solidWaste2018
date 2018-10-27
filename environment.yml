@@ -71,5 +71,19 @@ dependencies:
   - wheel=0.32.1=py37_0
   - xz=5.2.4=h14c3975_4
   - zlib=1.2.11=ha838bed_2
+  - pip:
+    - astunparse==1.6.1
+    - chardet==3.0.4
+    - colour==0.1.5
+    - geojson==2.4.1
+    - idna==2.7
+    - lea==3.0.1
+    - lxml==4.2.5
+    - markdown==3.0.1
+    - mpld3==0.3
+    - pixiedust==1.1.14
+    - pixiedust-node==0.2.5
+    - requests==2.20.0
+    - urllib3==1.24
 prefix: /home/mw-shovel/anaconda3/envs/jupyterNotebook
 
