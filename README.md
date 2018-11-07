@@ -12,6 +12,19 @@ Workbooks are incremental and intended to display results and methods.
 
 Contributions are limited to students in the group, EPFL professors and hammerdirt staff.
 
+We use Anaconda to manage our environments:
+
+1. The .yml file for this repo is included
+2. Here are the instructions for creating an environment from a .yml file [go](https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)
+
+### Do not put copyrighted material in this repository:
+
+1. This includes texts for which we (hammerdirt) have a valid license
+2. Code samples from texts that are copy righted
+3. Links to copyrighted texts that have been uploaded to another server
+
+There are plenty of resources out there. No need to steal anybodies work.
+
 #### However if you want to clone this repo or provide alternative analysis methods. Go ahead and submit a pull request on a seperate notebook. We can always get better at what we do!
 
 ### Getting the data:
