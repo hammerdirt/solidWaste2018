@@ -8,9 +8,15 @@
 
 Masters students in Environmental Engineering from the [École Polytechnique Féderale de Lausanne](https://enac.epfl.ch/environmental-engineering) test the hypothesis that litter densities on Lac Léman are predicatable. The current method is based on the Probability Density Function derived from the logarithm of the pieces/meter of trash (pcs/m) from over 100 samples.
 
-Workbooks are incremental and intended to display results and methods.
+### Note on the workbooks:
+
+1. Workbooks are incremental and intended to display results and methods.
+2. As long as you have an internet connection the workbook will reflect the most recent data from the survey
+3. The workboooks can be copied and the variables in the SECOND BLOCK can be changed to any location, body of water and object in the litter database
 
 Contributions are limited to students in the group, EPFL professors and hammerdirt staff.
+
+#### However if you want to clone this repo or provide alternative analysis methods. Go ahead and submit a pull request on a seperate notebook. We can always get better at what we do!
 
 We use Anaconda to manage our environments:
 
@@ -20,12 +26,12 @@ We use Anaconda to manage our environments:
 ### Do not put copyrighted material in this repository:
 
 1. This includes texts for which we (hammerdirt) have a valid license
-2. Code samples from texts that are copy righted
+2. Code samples from texts that are copyrighted
 3. Links to copyrighted texts that have been uploaded to another server
 
 There are plenty of resources out there. No need to steal anybodies work.
 
-#### However if you want to clone this repo or provide alternative analysis methods. Go ahead and submit a pull request on a seperate notebook. We can always get better at what we do!
+
 
 ### Getting the data:
 All the data for survey results is available through the hammeridrt API:
