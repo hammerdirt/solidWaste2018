@@ -1,4 +1,9 @@
+# This doc is in progress
+# There is alot of consolidation and editig going on
+# Dont't judge, however if you see some good solutions
+# let me know! @hammerdirt
 
+# Thanks 15 January 2019
 import requests
 import pandas as pd
 import numpy as np
@@ -485,7 +490,9 @@ def makeTimeSeriesAll(figSize,data,projects, saveFig):
 def makeXandYProject(a):
     """
     Retuns x and y values to graph a pdf from list of a list of values.
-    feeder function for makeYearOverYear graphing function
+    Accepts a list of tuples [("String", aList), ("String", anotherList)]
+    "String" is the name fo the list, appears in the legend of the graph
+    feeder function for makeProjectDist graphing function
     Uses the mean and standard deviation to create a an array of 1000 points
     with np.random.normal
     calls the following functions:
@@ -504,6 +511,12 @@ def makeXandYProject(a):
     return f
 
 def makeProjectDist(Data, figSize, colors, saveFig):
+    """
+    Creates a PDF from a tuple ("String", aList)
+    Data =  input from makeXandYProject
+    colors = array of matplotlib colors for distributions
+    savefig = file location to save svg or png or jpg
+    """
     fig, ax = plt.subplots(figsize=figSize)
     ax.set_ymargin(0)
     samples = {}
@@ -555,6 +568,22 @@ def makeProjectDist(Data, figSize, colors, saveFig):
     plt.show()
     plt.close()
 def makeCumlativeDist(x, mu, sigma, nbins, labelOne, labelTwo, chex, chex2, chex3):
+    """
+    Plots the cumlative histogram and the CDF from empirical data
+    x = array of values to be plotted
+
+    CDF parameters:
+    sigma = standard deviation to be used
+    mu = mean to be used
+    nbins = no of bins for the histogram
+
+    labelOne = label for the histogram
+    labelTwo = label for the CDF
+
+    chex = array of values to be plotted (scatter on the CDF)
+    note: the labels are hard coded in the function.
+    """
+
     fig, ax = plt.subplots(figsize=(8, 6))
     # plot the cumulative hsitogram  from the data
     n, bins, patches = ax.hist(x, nbins, density=1, color='fuchsia', histtype='step',
@@ -1061,3 +1090,23 @@ def compareTwoLists(listOne, listTwo):
     print("These are not in list two, but are in list one " + str(notInListTwo))
     print("These are not in list one, but are in list twon " + str(notInListOne))
     return
+def yearOverYearBox(popData):
+    fig, ax = plt.subplots(figsize=(6,8))
+    colorsBox = ["darkblue","darkcyan" ]
+    boxprops=dict(facecolor=colorsBox[0], edgecolor=colorsBox[1], linewidth=2, alpha=0.4)
+    whiskerprops = dict(color=colorsBox[1],linewidth=1 )
+    flierprops = dict(marker='o', markerfacecolor=colorsBox[0], markersize=10,
+                      markeredgecolor="white", alpha=0.4)
+    sns.boxplot(x="Year", y="pcs_m", data=popData,boxprops=boxprops, whiskerprops=whiskerprops,
+            medianprops=whiskerprops, capprops=whiskerprops, flierprops=flierprops, ax=ax)
+    legend_elements = [Line2D([0], [0], marker='o', color='w',label='Outliers',
+                         markerfacecolor=colorsBox[0], markersize=12, alpha=0.4),
+                   Patch(facecolor=colorsBox[0], edgecolor=colorsBox[1], alpha=0.5,
+                         label='IQR')]
+    ax.set_ylabel("Pieces per meter of shore-line", labelpad=10, fontsize=14)
+    ax.set_xlabel("Year of operation" , labelpad=10, fontsize=14)
+    ax.set_title("Year over year distribution of results 2015-2018 Lake Geneva", pad=15)
+    lgd1 = plt.legend(handles=legend_elements, loc='upper left')
+    plt.savefig("graphs/distributions/yearOverYearBox.svg")
+    plt.show()
+    plt.close()
