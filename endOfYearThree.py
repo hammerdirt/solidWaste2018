@@ -449,20 +449,20 @@ def makeTimeSeriesAll(figSize,data,projects, saveFig):
     ax.legend(fontsize=10)
 
     # create year labels and fills
-    xFive = pd.to_datetime("2016-05-01")
-    ax.text(xFive, 58, "Year one",
-            {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
-    xSix = pd.to_datetime("2017-05-1")
-    ax.text(xSix, 58, "Year two",
-            {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
-    xSeven = pd.to_datetime("2018-05-1")
-    ax.text(xSeven, 58, "Year three",
-            {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
+    # xFive = pd.to_datetime("2016-05-01")
+    # ax.text(xFive, 58, "Year one",
+    #         {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
+    # xSix = pd.to_datetime("2017-05-1")
+    # ax.text(xSix, 58, "Year two",
+    #         {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
+    # xSeven = pd.to_datetime("2018-05-1")
+    # ax.text(xSeven, 58, "Year three",
+    #         {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
 
 
 
     # lay down the y ticks
-    ml = MultipleLocator(2)
+    ml = MultipleLocator(5)
     ax.yaxis.set_minor_locator(ml)
 
     # lay down the gridlines
@@ -471,11 +471,11 @@ def makeTimeSeriesAll(figSize,data,projects, saveFig):
     conv = np.vectorize(mdates.strpdate2num('%Y-%m-%d'))
 
     #fill between the dates
-    xOne, xTwo = pd.to_datetime("2015-11-15"), pd.to_datetime("2016-11-15"),
-    xThree, xFour = pd.to_datetime("2017-11-15"), pd.to_datetime("2018-11-15")
-    ax.axvspan(xOne,xTwo, color='r', alpha=0.2, zorder=0)
-    ax.axvspan(xTwo,xThree, color='g', alpha=0.2, zorder=0)
-    ax.axvspan(xThree, xFour, color='b', alpha=0.2, zorder=0)
+    # xOne, xTwo = pd.to_datetime("2015-11-15"), pd.to_datetime("2016-11-15"),
+    # xThree, xFour = pd.to_datetime("2017-11-15"), pd.to_datetime("2018-11-15")
+    # ax.axvspan(xOne,xTwo, color='r', alpha=0.2, zorder=0)
+    # ax.axvspan(xTwo,xThree, color='g', alpha=0.2, zorder=0)
+    # ax.axvspan(xThree, xFour, color='b', alpha=0.2, zorder=0)
 
     # axis labels and titles
     ax.set_ylabel("Pieces of trash per meter of shoreline", labelpad= 10, color='black', fontsize=14)

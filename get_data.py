@@ -428,7 +428,7 @@ def makeTimeSeriesAll(figSize,data,projects, saveFig):
         newDf = data[data.Project == project]
         x = list(newDf.date)
         y = list(newDf.pcs_m)
-        ax.scatter(x=x, y=y, color=colors[i], edgecolor="white",linewidth=2, s=130, label=project)
+        ax.scatter(x=x, y=y, color=colors[i], edgecolor="white",linewidth=1, s=130, label=project)
     numSamps = len(data)
 
     # lay down the x ticks
@@ -444,15 +444,15 @@ def makeTimeSeriesAll(figSize,data,projects, saveFig):
     ax.legend(fontsize=10)
 
     # create year labels and fills
-    xFive = pd.to_datetime("2016-05-01")
-    ax.text(xFive, 58, "Year one",
-            {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
-    xSix = pd.to_datetime("2017-05-1")
-    ax.text(xSix, 58, "Year two",
-            {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
-    xSeven = pd.to_datetime("2018-05-1")
-    ax.text(xSeven, 58, "Year three",
-            {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
+    # xFive = pd.to_datetime("2016-05-01")
+    # ax.text(xFive, 58, "Year one",
+    #         {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
+    # xSix = pd.to_datetime("2017-05-1")
+    # ax.text(xSix, 58, "Year two",
+    #         {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
+    # xSeven = pd.to_datetime("2018-05-1")
+    # ax.text(xSeven, 58, "Year three",
+    #         {'color': 'black', 'fontsize': 16, 'ha': 'center', 'va': 'center'},alpha=0.6, zorder=1)
 
 
 
@@ -466,18 +466,18 @@ def makeTimeSeriesAll(figSize,data,projects, saveFig):
     conv = np.vectorize(mdates.strpdate2num('%Y-%m-%d'))
 
     #fill between the dates
-    xOne, xTwo = pd.to_datetime("2015-11-15"), pd.to_datetime("2016-11-15"),
-    xThree, xFour = pd.to_datetime("2017-11-15"), pd.to_datetime("2018-11-15")
-    ax.axvspan(xOne,xTwo, color='r', alpha=0.2, zorder=0)
-    ax.axvspan(xTwo,xThree, color='g', alpha=0.2, zorder=0)
-    ax.axvspan(xThree, xFour, color='b', alpha=0.2, zorder=0)
+    # xOne, xTwo = pd.to_datetime("2015-11-15"), pd.to_datetime("2016-11-15"),
+    # xThree, xFour = pd.to_datetime("2017-11-15"), pd.to_datetime("2018-11-15")
+    # ax.axvspan(xOne,xTwo, color='r', alpha=0.2, zorder=0)
+    # ax.axvspan(xTwo,xThree, color='g', alpha=0.2, zorder=0)
+    # ax.axvspan(xThree, xFour, color='b', alpha=0.2, zorder=0)
 
     # axis labels and titles
-    ax.set_ylabel("Pieces of trash per meter of shoreline", labelpad= 10, color='black', fontsize=14)
+    ax.set_ylabel("Total pieces of trash per meter of shoreline per sample", labelpad= 10, color='black', fontsize=12)
     plt.suptitle("Beach litter surveys 2015-2018" ,
                      fontsize=20, family='sans', horizontalalignment='center', y=0.98 )
-    plt.title("Lake Geneva, sorted by project/team n=" + str(numSamps),
-              fontsize=18, family='sans', loc="center", pad=15)
+    plt.title("Lake Geneva all sample sites, sorted by project/team n=" + str(numSamps),
+              fontsize=12, family='sans', loc="center", pad=15)
     plt.savefig(saveFig)
     plt.show()
     plt.close()
